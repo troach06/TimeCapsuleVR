@@ -25,16 +25,6 @@ public class PullObjects : MonoBehaviour
         if (!Application.isEditor)
         {
             controller = OVRInput.Controller.RTrackedRemote;
-            //if (OVRInput.GetActiveController() == OVRInput.Controller.LTrackedRemote)
-            //{
-            //    controller = OVRInput.Controller.LTrackedRemote;
-            //    rightRemote.SetActive(false);
-            //}
-            //else if (OVRInput.GetActiveController() == OVRInput.Controller.RTrackedRemote)
-            //{
-            //    controller = OVRInput.Controller.RTrackedRemote;
-            //    leftRemote.SetActive(false);
-            //}
         }
     }
 
@@ -46,7 +36,7 @@ public class PullObjects : MonoBehaviour
         MoveObject();
     }
 
-
+    // Move object to user
     public void MoveObject()
     {
         float step = speed * Time.deltaTime;
@@ -63,6 +53,8 @@ public class PullObjects : MonoBehaviour
             }
         }
     }
+
+    // Detect user grab
     public void DetectGrab()
     {
         if (Application.isEditor)
@@ -93,6 +85,7 @@ public class PullObjects : MonoBehaviour
         }
     }
 
+    // Throw object with force of controller
     public void TossObject(Rigidbody rigidBody)
     {
         if (!Application.isEditor)
@@ -101,6 +94,7 @@ public class PullObjects : MonoBehaviour
         }
     }
 
+    // Detect objects to grab based on tag and raycast
     public void DetectObjects()
     {
         RaycastHit hit = new RaycastHit();

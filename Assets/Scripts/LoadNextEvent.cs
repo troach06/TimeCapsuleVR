@@ -25,6 +25,7 @@ public class LoadNextEvent : MonoBehaviour {
 	void Update () {
 	}
 
+    // Load events based on completed tasks
     public IEnumerator LoadEvent() {
 
         if (SceneManager.GetActiveScene().name == "Title") {

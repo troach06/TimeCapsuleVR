@@ -16,6 +16,7 @@ public class MovementDetection : MonoBehaviour {
 		
 	}
 
+    // Detect movement based on triggers in office scene
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "FirstCheckpoint" && !firstCheck)
